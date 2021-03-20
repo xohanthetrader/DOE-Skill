@@ -13,7 +13,6 @@ public class Turn : MonoBehaviour
     {
         Vector2 raw = context.ReadValue<Vector2>();
         WorldMousePos = cam.ScreenToWorldPoint(raw);
-        print(WorldMousePos);
         //Vector2 resdiv2 = new Vector2( (float) Screen.currentResolution.width/2,  (float) Screen.currentResolution.height/2) ;
 
     }
