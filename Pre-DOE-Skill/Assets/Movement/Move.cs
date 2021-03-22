@@ -17,7 +17,7 @@ public class Move : MonoBehaviour
 
     Vector2 ToMove()
     {
-        return rb.position + (_moveState * speed);
+        return rb.position + _moveState * (speed * Time.deltaTime);
     }
 
     // Update is called once per frame

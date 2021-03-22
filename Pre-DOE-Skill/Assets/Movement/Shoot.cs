@@ -12,7 +12,6 @@ public class Shoot : MonoBehaviour
     
     public void Fire(InputAction.CallbackContext context)
     {
-        print(context.ReadValue<float>());
         if (context.ReadValue<float>() == 1)
         {
             GameObject clone = Instantiate(bullet,firepoint.position,firepoint.rotation);
