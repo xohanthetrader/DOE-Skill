@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour
     
     public void Fire(InputAction.CallbackContext context)
     {
-        if (context.ReadValue<float>() == 1)
+        if (context.ReadValue<float>() == 0)
         {
             GameObject clone = Instantiate(bullet,firepoint.position,firepoint.rotation);
             Rigidbody2D clonerb = clone.GetComponent<Rigidbody2D>();
