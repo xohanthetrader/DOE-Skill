@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 1570496346}
   - component: {fileID: 1570496349}
   - component: {fileID: 1570496350}
+  - component: {fileID: 1570496351}
   m_Layer: 0
   m_Name: TempPlayer
   m_TagString: Untagged
@@ -434,7 +435,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 9052399193765192133, guid: 1bc55576dc37f52439c875066435e538, type: 3}
   firepoint: {fileID: 1849710832}
+  empowered: 0
+  isGrowing: 0
   bulletForce: 10
+--- !u!61 &1570496351
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570496343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0037930757}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.22138011, y: 0.23275939}
+  m_EdgeRadius: 0
 --- !u!1001 &1650077716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,7 +545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849710831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0196, y: 0.11, z: 0}
+  m_LocalPosition: {x: -0.0214, y: 0.186, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1570496345}
@@ -536,7 +565,7 @@ GameObject:
   - component: {fileID: 2141967353}
   m_Layer: 0
   m_Name: TempTerrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
