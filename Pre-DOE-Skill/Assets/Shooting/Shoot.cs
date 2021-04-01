@@ -19,7 +19,6 @@ public class Shoot : MonoBehaviour
         float speedMultiplier = 1;
         if (!context.ReadValueAsButton())
         {
-            print("i have fired");
             GameObject clone = Instantiate(bullet,firepoint.position,firepoint.rotation);
             Transform cloneTransform = clone.GetComponent<Transform>();
             if (empowered/4 > 1)
