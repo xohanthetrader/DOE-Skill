@@ -13,7 +13,6 @@ public class Move : MonoBehaviour
     public void OnWASD(InputAction.CallbackContext context)
     {
         _moveState = context.ReadValue<Vector2>();
-        print(_moveState);
     }
 
     Vector2 ToMove()

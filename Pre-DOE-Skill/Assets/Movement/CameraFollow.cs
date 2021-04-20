@@ -30,6 +30,7 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         OffsetFade();
+        print(_offSet);
        
         transform.position = player.position + (Vector3)_offSet - _allignCamera;
     }
@@ -62,9 +63,29 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            if ((_offSet.x > -offSet.x && _offSet.x < offSet.x) && (_offSet.y > -offSet.y && _offSet.y < offSet.y))
+            if ((_offSet.x > -offSet.x && _offSet.x < offSet.x) || (_offSet.y > -offSet.y && _offSet.y < offSet.y))
             {
                 _offSet += wasd * (2 * Time.deltaTime);
+            }
+
+            if (_offSet.x>offSet.x)
+            {
+                _offSet.x = offSet.x;
+            }
+            
+            if (_offSet.x< -offSet.x)
+            {
+                _offSet.x = -offSet.x;
+            }
+            
+            if (_offSet.y>offSet.y)
+            {
+                _offSet.y = offSet.y;
+            }
+            
+            if (_offSet.y< -offSet.y)
+            {
+                _offSet.y = -offSet.y;
             }
         }
     }
