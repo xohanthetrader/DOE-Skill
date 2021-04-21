@@ -68,6 +68,31 @@ public class CameraFollow : MonoBehaviour
                 _offSet += wasd * (2 * Time.deltaTime);
             }
 
+            if (wasd.x == 0)
+            {
+                if (_offSet.x > 0)
+                {
+                    _offSet.x -= 2 * Time.deltaTime;
+                }
+                else
+                {
+                    _offSet.x += 2 * Time.deltaTime;
+                }
+            }
+
+            if (wasd.y == 0)
+            {
+                if (_offSet.y > 0)
+                {
+                    _offSet.y -= 2 * Time.deltaTime;
+                }
+                else
+                {
+                    _offSet.y += 2 * Time.deltaTime;
+                }
+            }
+            
+            
             if (_offSet.x>offSet.x)
             {
                 _offSet.x = offSet.x;
@@ -87,6 +112,8 @@ public class CameraFollow : MonoBehaviour
             {
                 _offSet.y = -offSet.y;
             }
+            
+            
         }
     }
 }
