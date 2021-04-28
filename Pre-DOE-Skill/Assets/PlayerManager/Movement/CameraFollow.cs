@@ -41,12 +41,12 @@ public class CameraFollow : MonoBehaviour
         {
             if (_offSet.x > 0)
             {
-                _offSet.x -= 2 * Time.deltaTime;
+                _offSet.x -= 1 * Time.deltaTime;
             }
 
             if (_offSet.x < 0)
             {
-                _offSet.x += 2 * Time.deltaTime;
+                _offSet.x += 1 * Time.deltaTime;
             }
         }
         else
@@ -55,12 +55,12 @@ public class CameraFollow : MonoBehaviour
             {
                 if (wasd.x > 0)
                 {
-                    _offSet.x += 2 * Time.deltaTime;
+                    _offSet.x += 1 * Time.deltaTime;
                 }
 
                 if (wasd.x < 0)
                 {
-                    _offSet.x -= 2 * Time.deltaTime;
+                    _offSet.x -= 1 * Time.deltaTime;
                 }
             }
         }
@@ -68,12 +68,12 @@ public class CameraFollow : MonoBehaviour
         {
             if (_offSet.y > 0)
             {
-                _offSet.y -= 2 * Time.deltaTime;
+                _offSet.y -= 1 * Time.deltaTime;
             }
 
             if (_offSet.y < 0)
             {
-                _offSet.y += 2 * Time.deltaTime;
+                _offSet.y += 1 * Time.deltaTime;
             }
         }
         else
@@ -82,12 +82,12 @@ public class CameraFollow : MonoBehaviour
             {
                 if (wasd.y > 0)
                 {
-                    _offSet.y += 2 * Time.deltaTime;
+                    _offSet.y += 1 * Time.deltaTime;
                 }
 
                 if (wasd.y < 0)
                 {
-                    _offSet.y -= 2 * Time.deltaTime;
+                    _offSet.y -= 1 * Time.deltaTime;
                 }
             }
         }
