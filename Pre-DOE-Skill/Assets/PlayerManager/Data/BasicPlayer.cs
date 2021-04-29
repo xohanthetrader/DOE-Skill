@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
 {
     public PlayerData myPlayer;
+    public Camera cam;
     
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +22,8 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
     {
         if (myPlayer.Health <= 0)
         {
+            //Will add gameover screen
+            cam.GetComponent<CameraFollow>().enabled = false;
             Destroy(gameObject);
         }
 

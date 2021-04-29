@@ -5,4 +5,5 @@ using UnityEngine;
 public enum EnemyDamageTypes
 {
     Traps,
+    TurretBullet,
 }

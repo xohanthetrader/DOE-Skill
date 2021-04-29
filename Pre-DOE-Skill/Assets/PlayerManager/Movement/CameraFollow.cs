@@ -30,8 +30,7 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         OffsetFade();
-        print(_offSet);
-       
+
         transform.position = player.position + (Vector3)_offSet - _allignCamera;
     }
 
