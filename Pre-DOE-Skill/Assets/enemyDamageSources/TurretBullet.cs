@@ -11,7 +11,7 @@ public class TurretBullet : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             IPlayerHealthManager healthManager = other.gameObject.GetComponent<IPlayerHealthManager>();
-            healthManager.TakeDamage(10,EnemyDamageTypes.TurretBullet);
+            healthManager.TakeDamage(2.5f,EnemyDamageTypes.TurretBullet);
         }
     }
 }
