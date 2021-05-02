@@ -10,7 +10,7 @@ public class TrapTurret : MonoBehaviour
     public Sprite revealed;
     public SpriteRenderer toChange;
     private bool isRevealed = false;
-    public Transform player;
+    private Transform player;
     private bool canShoot;
     public GameObject bullet;
     public Transform Firepoint;
@@ -22,6 +22,7 @@ public class TrapTurret : MonoBehaviour
             toChange.sprite = revealed;
             isRevealed = true;
             canShoot = true;
+            player = other.GetComponent<Transform>();
         }
     }
 

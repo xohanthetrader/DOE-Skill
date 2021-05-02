@@ -20,7 +20,7 @@ public class BulletExplode : MonoBehaviour
 
     IEnumerator Fly()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(20);
         Destroy(gameObject);
     }
 }

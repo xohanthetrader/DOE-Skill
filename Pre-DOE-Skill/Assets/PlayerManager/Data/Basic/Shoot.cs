@@ -12,7 +12,8 @@ public class Shoot : MonoBehaviour
     public bool isGrowing;
 
     public float bulletForce = 5;
-    
+
+
     public void Fire(InputAction.CallbackContext context)
     {
         isGrowing = context.ReadValueAsButton();

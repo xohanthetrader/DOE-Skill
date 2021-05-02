@@ -1,23 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
 {
     public PlayerData myPlayer;
-    public Camera cam;
     public PlayerHealthBar healthBar;
-    
+
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
+        
         if (myPlayer.Health <= 0)
         {
             myPlayer.Health = myPlayer.MAXHealth;
         }
         healthBar.Init(myPlayer.MAXHealth,myPlayer.Health);
+        gameObject.GetComponent<Shoot>().enabled = true;
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -26,8 +28,8 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
         if (myPlayer.Health <= 0)
         {
             //Will add gameover screen
-            cam.GetComponent<CameraFollow>().enabled = false;
-            Destroy(gameObject);
+           FindObjectOfType<Camera>().GetComponent<CameraFollow>().enabled = false;
+           Destroy(gameObject);
         }
 
         if (myPlayer.Health > myPlayer.MAXHealth)

@@ -354,7 +354,6 @@ MonoBehaviour:
   hidden: {fileID: 21300000, guid: 363e7a2476ffb404e92208cb845404a3, type: 3}
   revealed: {fileID: 21300000, guid: 6bd802943c47c3841b9d89fadce7a07f, type: 3}
   toChange: {fileID: 336701408}
-  player: {fileID: 1570496345}
   bullet: {fileID: 1110798707457870063, guid: 59318fd0da3be754b9e0ef0bddcb04bd, type: 3}
   Firepoint: {fileID: 364097808}
 --- !u!58 &336701407
@@ -1131,8 +1130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 11400000, guid: 34055fb42dee6fa4e86567899f2a69f3, type: 2}
-  cam: {fileID: 519420031}
   healthBar: {fileID: 523699072}
+  Firepoints: {fileID: 0}
 --- !u!1 &1592561707
 GameObject:
   m_ObjectHideFlags: 0
