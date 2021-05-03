@@ -9,17 +9,19 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
 {
     public PlayerData myPlayer;
     public PlayerHealthBar healthBar;
+    public Shoot shoot;
+    public ShootLaser laser;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         if (myPlayer.Health <= 0)
         {
             myPlayer.Health = myPlayer.MAXHealth;
         }
         healthBar.Init(myPlayer.MAXHealth,myPlayer.Health);
-        gameObject.GetComponent<Shoot>().enabled = true;
+        shoot.enabled = true;
+        laser.enabled = false;
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -37,7 +39,21 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
             myPlayer.Health = myPlayer.MAXHealth;
         }
     }
-    
+
+    public void SwitchWeapon(InputAction.CallbackContext context)
+    {
+        float weaponNumber = context.ReadValue<float>();
+        if (weaponNumber == -1)
+        {
+            shoot.enabled = true;
+            laser.enabled = false;
+        } else if (weaponNumber == 1)
+        {
+            shoot.enabled = false;
+            laser.enabled = true;
+        }
+    }
+
 
     public void TakeDamage(float damage, EnemyDamageTypes type)
     {

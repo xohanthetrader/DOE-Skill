@@ -23,6 +23,8 @@ public class TrapTurret : MonoBehaviour
             isRevealed = true;
             canShoot = true;
             player = other.GetComponent<Transform>();
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            gameObject.tag = "Enemy";
         }
     }
 
@@ -33,6 +35,8 @@ public class TrapTurret : MonoBehaviour
             toChange.sprite = hidden;
             isRevealed = false;
             transform.rotation = quaternion.Euler(0,0,0);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.tag = "Terrain";
         }
     }
 

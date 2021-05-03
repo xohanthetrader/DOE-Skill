@@ -16,9 +16,18 @@ public class Shoot : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        isGrowing = context.ReadValueAsButton();
+        if (enabled)
+        {
+            Shooting(context.ReadValueAsButton());
+        }
+    }
+
+
+    void Shooting(bool buttonVal)
+    {
+        isGrowing = buttonVal;
         float speedMultiplier = 1;
-        if (!context.ReadValueAsButton())
+        if (!buttonVal)
         {
             GameObject clone = Instantiate(bullet,firepoint.position,firepoint.rotation);
             Transform cloneTransform = clone.GetComponent<Transform>();

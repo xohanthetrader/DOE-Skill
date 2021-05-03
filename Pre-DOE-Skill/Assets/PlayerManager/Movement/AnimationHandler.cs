@@ -10,6 +10,6 @@ public class AnimationHandler : MonoBehaviour
 
     public void onClick(InputAction.CallbackContext context)
     {
-        Animator.SetBool("Shooting",context.ReadValueAsButton());   
+        Animator.SetBool("Shooting",context.ReadValueAsButton());
     }
 }

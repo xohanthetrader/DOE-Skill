@@ -48,9 +48,12 @@ GameObject:
   - component: {fileID: -4629111653665746738}
   - component: {fileID: 1482188000}
   - component: {fileID: 1482188001}
+  - component: {fileID: 1143805304}
+  - component: {fileID: 1143805305}
+  - component: {fileID: 4254413762218963490}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 70010d211460afe45ba12c439616d0ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -239,6 +242,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1143805305}
+        m_TargetAssemblyTypeName: AnimationHandler, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6a7caa71-2f48-46f4-b2ce-2813947a8382
     m_ActionName: Keyboard/Shoot[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -300,6 +315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 11400000, guid: 34055fb42dee6fa4e86567899f2a69f3, type: 2}
   healthBar: {fileID: 0}
+  shoot: {fileID: 0}
+  laser: {fileID: 0}
 --- !u!114 &1482188001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,3 +334,50 @@ MonoBehaviour:
   empowered: 0
   isGrowing: 0
   bulletForce: 10
+--- !u!95 &1143805304
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862100249850628150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7f5350a68c7fd74ead947dad8f395d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1143805305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862100249850628150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80be132928769d44b081454d233744e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 1143805304}
+--- !u!114 &4254413762218963490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862100249850628150}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af847ba989877441bd0a17abc1378ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShooting: 0
+  Firepoint: {fileID: 3322569743772761550}
+  laser: {fileID: 0}

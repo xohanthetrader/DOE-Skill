@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : EnemyHealthManager
+public class BasicEnemy : MonoBehaviour,IEnemyHealthManager
 {
     private float maxHealth = 100;
     public float currentHealth;
     public void Start()
     {
-        currentHealth += maxHealth;
+        currentHealth = maxHealth;
     }
 
-    public override void TakeDamage(float damage, BulletTypes types)
+    public void TakeDamage(float damage, BulletTypes types)
     {
         currentHealth -= damage;
     }
