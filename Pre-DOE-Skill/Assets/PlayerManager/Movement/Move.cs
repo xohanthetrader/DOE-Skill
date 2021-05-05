@@ -17,11 +17,11 @@ public class Move : MonoBehaviour
 
     Vector2 ToMove()
     {
-        return rb.position + _moveState * (speed * Time.deltaTime);
+        return rb.position + _moveState * (speed * Time.fixedDeltaTime);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rb.MovePosition(ToMove());
     }

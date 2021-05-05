@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,7 +12,7 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
     public ShootLaser laser;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (myPlayer.Health <= 0)
         {
