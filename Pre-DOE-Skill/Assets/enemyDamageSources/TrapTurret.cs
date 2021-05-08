@@ -32,11 +32,11 @@ public class TrapTurret : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            toChange.sprite = hidden;
+            //toChange.sprite = hidden;
             isRevealed = false;
-            transform.rotation = quaternion.Euler(0,0,0);
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            gameObject.tag = "Terrain";
+            //transform.rotation = quaternion.Euler(0,0,0);
+            //gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            //gameObject.tag = "Terrain";
         }
     }
 
