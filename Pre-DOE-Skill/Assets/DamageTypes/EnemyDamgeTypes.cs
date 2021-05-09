@@ -6,4 +6,5 @@ public enum EnemyDamageTypes
 {
     Traps,
     TurretBullet,
+    Wisp,
 }
