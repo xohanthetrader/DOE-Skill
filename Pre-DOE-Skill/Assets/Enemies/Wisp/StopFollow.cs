@@ -9,7 +9,7 @@ public class StopFollow : MonoBehaviour
 {
     private Transform self;
     public Transform player;
-    public AIDestinationSetter toDisable;
+    public AIPath toDisable;
 
     private void Awake()
     {

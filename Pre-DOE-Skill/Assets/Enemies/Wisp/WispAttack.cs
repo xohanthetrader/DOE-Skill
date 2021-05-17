@@ -34,9 +34,4 @@ public class WispAttack : MonoBehaviour
 
         canAttack = true;
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(swipePoint.position,1);
-    }
 }

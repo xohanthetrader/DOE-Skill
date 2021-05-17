@@ -10,6 +10,7 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
     public PlayerHealthBar healthBar;
     public Shoot shoot;
     public ShootLaser laser;
+    public List<StatusTypes> StatusTypesArray;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +22,8 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
         healthBar.Init(myPlayer.MAXHealth,myPlayer.Health);
         shoot.enabled = true;
         laser.enabled = false;
+        StatusTypesArray = new List<StatusTypes>();
+        StatusTypesArray.Add(StatusTypes.None);
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -53,6 +56,14 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
         }
     }
 
+    
+    public void AddStatus(StatusTypes status)
+    {
+        if (!StatusTypesArray.Contains(status))
+        {
+            StatusTypesArray.Add(status);
+        }
+    }
 
     public void TakeDamage(float damage, EnemyDamageTypes type)
     {
@@ -63,5 +74,16 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
     private void Update()
     {
         CheckHealth();
+        foreach (StatusTypes types in StatusTypesArray)
+        {
+            switch (types)
+            {
+                case StatusTypes.Burn:
+                    TakeDamage(0.7f * Time.deltaTime,EnemyDamageTypes.Status);
+                    break;
+                case StatusTypes.None:
+                    break;
+            }
+        }
     }
 }

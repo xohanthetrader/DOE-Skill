@@ -7,4 +7,6 @@ public enum EnemyDamageTypes
     Traps,
     TurretBullet,
     Wisp,
+    PyroFlame,
+    Status,
 }

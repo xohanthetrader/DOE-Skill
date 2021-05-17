@@ -9,5 +9,8 @@ public interface IPlayerHealthManager
     public void CheckHealth();
 
     public void SwitchWeapon(InputAction.CallbackContext context);
+    
+
+    public void AddStatus(StatusTypes status);
 
 }
