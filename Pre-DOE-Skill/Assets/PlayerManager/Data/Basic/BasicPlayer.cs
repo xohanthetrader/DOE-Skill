@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
 {
     public PlayerData myPlayer;
     public PlayerHealthBar healthBar;
+    public FireStatus fireStatus;
     public Shoot shoot;
     public ShootLaser laser;
     public List<StatusTypes> StatusTypesArray;
+    public GameObject DeathMessage;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,9 +34,8 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
     {
         if (myPlayer.Health <= 0)
         {
-            //Will add gameover screen
-           FindObjectOfType<Camera>().GetComponent<CameraFollow>().enabled = false;
-           Destroy(gameObject);
+            Time.timeScale = 0;
+            DeathMessage.SetActive(true);
         }
 
         if (myPlayer.Health > myPlayer.MAXHealth)
@@ -62,6 +64,12 @@ public class BasicPlayer : MonoBehaviour,IPlayerHealthManager
         if (!StatusTypesArray.Contains(status))
         {
             StatusTypesArray.Add(status);
+            switch (status)
+            {
+                case StatusTypes.Burn:
+                    fireStatus.Activate();
+                    break;
+            }
         }
     }
 

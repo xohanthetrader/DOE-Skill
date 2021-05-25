@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if (enabled)
+        if (enabled && Time.timeScale != 0)
         {
             Shooting(context.ReadValueAsButton());
         }

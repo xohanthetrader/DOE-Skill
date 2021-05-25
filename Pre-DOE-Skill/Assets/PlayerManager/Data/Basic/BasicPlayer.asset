@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BasicPlayer
   m_EditorClassIdentifier: 
   MAXHealth: 100
-  Health: 90
+  Health: 24.35431
