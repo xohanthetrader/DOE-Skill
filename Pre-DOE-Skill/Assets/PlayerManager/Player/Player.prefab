@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610770851}
   - component: {fileID: 1610770850}
+  - component: {fileID: 8817542295883458567}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -129,6 +130,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &8817542295883458567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610770849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a20a0da14f80f84b81602df7fc0aeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line: {fileID: 1610770850}
+  effectExists: 0
+  player: {fileID: 8568552254936762969}
+  effect: {fileID: 7955355541773670811, guid: 152092942c0db0943a4214c7a58eece5, type: 3}
 --- !u!1 &664999263183248195
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,8 +490,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 11400000, guid: 34055fb42dee6fa4e86567899f2a69f3, type: 2}
   healthBar: {fileID: 0}
+  fireStatus: {fileID: 0}
   shoot: {fileID: 1482188001}
   laser: {fileID: 4254413762218963490}
+  StatusTypesArray: 
+  DeathMessage: {fileID: 0}
 --- !u!114 &1482188001
 MonoBehaviour:
   m_ObjectHideFlags: 0
