@@ -20,6 +20,10 @@ public class ButtonManager : MonoBehaviour
     public void Tutorial()
     {
         SceneManager.LoadScene("Tutorial");
+        foreach (PlayerData player in allPlayers)
+        {
+            player.Health = player.MAXHealth;
+        }
     }
 
     public void Quit()
