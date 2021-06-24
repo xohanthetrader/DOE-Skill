@@ -5,11 +5,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
     public List<Quest> Quests;
     public bool questsStarted = false;
+    private bool Questsdone = false;
     public TextMeshProUGUI Text;
 
     private void Start()
@@ -26,40 +28,55 @@ public class QuestManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") )
+        if (!Questsdone)
         {
-            if (!questsStarted)
+            if (other.gameObject.CompareTag("Player"))
             {
-                Quests[0].inProgress = true;
-                questsStarted = true;
-                print("QuestGranted");
-                Text.text = Quests[0].Objective;
-            }
-
-            if (questsStarted)
-            {
-                int NextQuest = 0;
-                for(int i = 0; i < Quests.Count; i++)
+                if (!questsStarted)
                 {
-                    if (Quests[i].inProgress)
-                    {
-                        goto NoNewQest;
-                    }
+                    Quests[0].inProgress = true;
+                    questsStarted = true;
+                    print("QuestGranted");
+                    Text.text = Quests[0].Objective;
                 }
 
-                for (int i = 0; i < Quests.Count; i++)
+                if (questsStarted)
                 {
-                    if (Quests[i].Completed)
+                    int NextQuest = 0;
+                    for (int i = 0; i < Quests.Count; i++)
                     {
-                        NextQuest = i + 1;
+                        if (Quests[i].inProgress)
+                        {
+                            goto NoNewQest;
+                        }
                     }
+
+                    for (int i = 0; i < Quests.Count; i++)
+                    {
+                        if (Quests[i].Completed)
+                        {
+                            NextQuest = i + 1;
+                        }
+                    }
+
+                    Quests[NextQuest].inProgress = true;
+                    Text.text = Quests[NextQuest].Objective;
                 }
-                Quests[NextQuest].inProgress = true;
-                Text.text = Quests[NextQuest].Objective;
             }
+
+            NoNewQest: ;
         }
+        if (Questsdone)
+        {
+            Text.text = "Well Done you have finished<br>You will be sent to the main  in 3 secconds";
+            StartCoroutine(Return());
+        }
+    }
 
-        NoNewQest: ;
+    IEnumerator Return()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void CompleteQuest(string objective)
@@ -70,12 +87,21 @@ public class QuestManager : MonoBehaviour
             {
                 Quests[i].inProgress = false;
                 Quests[i].Completed = true;
+                print($"Quest {Quests[i].ShortObj} is done");
                 Text.text = "Quest Complete";
-                if (i == 2)
+                if (i==3)
                 {
-                    Quests[i++].inProgress = true;
-                    Text.text = Quests[i++].Objective;
+                    Questsdone = true;
                 }
+                
+                if (objective == "EnterBoss")
+                {
+                    Quests[3].inProgress = true;
+                    print("am i working");
+                    Text.text = Quests[i+1].Objective;
+                }
+
+                
                 
             }
         }
