@@ -9,4 +9,5 @@ public enum EnemyDamageTypes
     Wisp,
     PyroFlame,
     Status,
+    DragonFire,
 }

@@ -100,9 +100,6 @@ public class QuestManager : MonoBehaviour
                     print("am i working");
                     Text.text = Quests[i+1].Objective;
                 }
-
-                
-                
             }
         }
     }

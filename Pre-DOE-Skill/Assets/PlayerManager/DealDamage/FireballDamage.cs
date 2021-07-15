@@ -10,13 +10,10 @@ public class FireballDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.isTrigger)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                IEnemyHealthManager healthManager = other.gameObject.GetComponent<IEnemyHealthManager>();
-                healthManager.TakeDamage(damage + bonusDamage,BulletTypes.FireBall);
-            }
+            IEnemyHealthManager healthManager = other.gameObject.GetComponent<IEnemyHealthManager>();
+            healthManager.TakeDamage(damage + bonusDamage,BulletTypes.FireBall);
         }
     }
 }
