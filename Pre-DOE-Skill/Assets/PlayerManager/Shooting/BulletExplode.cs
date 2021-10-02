@@ -11,10 +11,10 @@ public class BulletExplode : MonoBehaviour
         
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Terrain"))
         {
-            if (!other.isTrigger)
-            {
+            
+            
                 Destroy(gameObject);
-            }
+            
         }
     }
 

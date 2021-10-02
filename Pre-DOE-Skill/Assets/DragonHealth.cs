@@ -9,5 +9,9 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager
     {
         print("damge taken");
         Health -= damage * 0.5f;
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
