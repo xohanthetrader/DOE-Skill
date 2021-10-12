@@ -10,4 +10,5 @@ public enum EnemyDamageTypes
     PyroFlame,
     Status,
     DragonFire,
+    Boom,
 }

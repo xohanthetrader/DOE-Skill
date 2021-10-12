@@ -29,10 +29,10 @@ public class DragonController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector2 dir = player.position - transform.position;
+        Vector2 dir = player.position - firepoint.position;
         inRange = dir.sqrMagnitude <= 25;
         angle = dir;
-        hitinfo = Physics2D.Raycast(transform.position, dir);
+        hitinfo = Physics2D.Raycast(firepoint.position, dir);
         Debug.DrawRay(transform.position,dir,Color.blue,0,false);
         //Debug.DrawLine(transform.position,player.position,Color.red,0,false);
         canSee = hitinfo && hitinfo.transform.CompareTag("Player");
