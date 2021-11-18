@@ -8,6 +8,8 @@ public class PyroHealth : MonoBehaviour,IEnemyHealthManager
     [SerializeField]
     private float Health = 75;
 
+    public int currRoom;
+
     public PlayerHealthBar myHealth;
 
     private void Awake()
@@ -39,5 +41,17 @@ public class PyroHealth : MonoBehaviour,IEnemyHealthManager
         {
             Destroy(gameObject);
         }
+    }
+    public void RoomActive(int room)
+    {
+        if (room == currRoom)
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
+    public void JoinDeath(ref RoomMan room)
+    {
+        throw new NotImplementedException();
     }
 }

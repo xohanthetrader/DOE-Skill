@@ -6,6 +6,7 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour,IEnemyHealthManager
 {
     private float maxHealth = 100;
+    public int currRoom;
     public float currentHealth;
     public void Start()
     {
@@ -23,5 +24,17 @@ public class BasicEnemy : MonoBehaviour,IEnemyHealthManager
         {
             Destroy(gameObject);
         }
+    }
+    public void RoomActive(int room)
+    {
+        if (room == currRoom)
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
+    public void JoinDeath(ref RoomMan room)
+    {
+        throw new NotImplementedException();
     }
 }
