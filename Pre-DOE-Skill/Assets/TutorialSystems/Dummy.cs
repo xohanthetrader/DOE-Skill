@@ -46,4 +46,9 @@ public class Dummy : MonoBehaviour,IEnemyHealthManager
     {
         throw new NotImplementedException();
     }
+
+    public void JoinDeath(ref FinalRoom room)
+    {
+        throw new NotImplementedException();
+    }
 }

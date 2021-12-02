@@ -50,6 +50,11 @@ public class PyroHealth : MonoBehaviour,IEnemyHealthManager
         }
     }
 
+    public void JoinDeath(ref FinalRoom room)
+    {
+        throw new NotImplementedException();
+    }
+
     public void JoinDeath(ref RoomMan room)
     {
         throw new NotImplementedException();

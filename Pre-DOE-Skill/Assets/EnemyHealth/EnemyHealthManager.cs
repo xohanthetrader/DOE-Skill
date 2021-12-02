@@ -10,5 +10,7 @@ public interface IEnemyHealthManager
     public void RoomActive(int room);
 
     public void JoinDeath(ref RoomMan room);
+
+    public void JoinDeath(ref FinalRoom room);
 }
 
