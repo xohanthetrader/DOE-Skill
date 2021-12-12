@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalRoom : MonoBehaviour
 {
@@ -9,8 +11,9 @@ public class FinalRoom : MonoBehaviour
     private List<IEnemyHealthManager> Enemies;
     public Collider2D roomArea;
     public int roomNumber;
-    private int ECNT;
-    private int Dead = 0;
+    public int ECNT;
+    public int Dead = 0;
+    public GameObject NextLevel;
 
     void Start()
     {
@@ -26,9 +29,9 @@ public class FinalRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ECNT >= Dead)
+        if (ECNT <= Dead)
         {
-            
+            NextLevel.SetActive(true);
         }
     }
 
