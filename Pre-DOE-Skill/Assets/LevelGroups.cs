@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarMan : MonoBehaviour
+enum LevelGroups
 {
-
+    Level_Test,
 }
