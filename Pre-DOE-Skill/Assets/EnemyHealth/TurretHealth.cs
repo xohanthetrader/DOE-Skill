@@ -46,13 +46,10 @@ public class TurretHealth : MonoBehaviour,IEnemyHealthManager
         }
     }
 
-    public void JoinDeath(ref RoomMan room)
+    public void JoinDeath(ref IRoomMan room)
     {
         throw new NotImplementedException();
     }
 
-    public void JoinDeath(ref FinalRoom room)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

@@ -33,13 +33,10 @@ public class BasicEnemy : MonoBehaviour,IEnemyHealthManager
         }
     }
 
-    public void JoinDeath(ref FinalRoom room)
+    public void JoinDeath(ref IRoomMan room)
     {
         throw new NotImplementedException();
     }
 
-    public void JoinDeath(ref RoomMan room)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

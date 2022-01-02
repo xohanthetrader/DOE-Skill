@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class RoomMan : MonoBehaviour
+public class RoomMan : MonoBehaviour,IRoomMan
 {
     [SerializeField] private int roomNumber;
     public Collider2D roomArea;
@@ -18,7 +18,7 @@ public class RoomMan : MonoBehaviour
         ECNT = Enemies.Count;
         foreach (IEnemyHealthManager enemy in Enemies)
         {
-            var roomMan = gameObject.GetComponent<RoomMan>();
+            var roomMan = gameObject.GetComponent<IRoomMan>();
             enemy.JoinDeath(ref roomMan);
         }
     }

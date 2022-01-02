@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
 {
-    
+        
+    public delegate void Death();
+
+    private Death death;
     
     public float Health = 100;
     public int currRoom;
@@ -30,15 +33,12 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
         }
     }
 
-    public void JoinDeath(ref RoomMan room)
+    public void JoinDeath(ref IRoomMan room)
     {
-        throw new NotImplementedException();
+        death += room.DeathCounter;    
     }
 
-    public void JoinDeath(ref FinalRoom room)
-    {
-        throw new NotImplementedException();
-    }
+    
 
     public bool IsBoss() => isBoss;
     public void OnDeath(){

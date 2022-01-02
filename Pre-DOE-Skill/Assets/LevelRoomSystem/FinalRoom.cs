@@ -5,7 +5,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinalRoom : MonoBehaviour
+public class FinalRoom : MonoBehaviour,IRoomMan
 {
     // Start is called before the first frame update
     private List<IEnemyHealthManager> Enemies;
@@ -21,7 +21,7 @@ public class FinalRoom : MonoBehaviour
         ECNT = Enemies.Count;
         foreach (IEnemyHealthManager enemy in Enemies)
         {
-            var roomMan = gameObject.GetComponent<FinalRoom>();
+            var roomMan = gameObject.GetComponent<IRoomMan>();
             enemy.JoinDeath(ref roomMan);
         }
     }

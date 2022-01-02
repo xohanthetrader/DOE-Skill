@@ -36,17 +36,13 @@ public class WispHealth : MonoBehaviour,IEnemyHealthManager
         }
     }
 
-    public void JoinDeath(ref RoomMan room)
+    public void JoinDeath(ref IRoomMan room)
     {
         death += room.DeathCounter;
         print("we have a joiner");
     }
 
-    public void JoinDeath(ref FinalRoom room)
-    {
-        death += room.DeathCounter;
-        print("we have a joiner");
-    }
+    
 
 
     public void TakeDamage(float damage, BulletTypes types)
