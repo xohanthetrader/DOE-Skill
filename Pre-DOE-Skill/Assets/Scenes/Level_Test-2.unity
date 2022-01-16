@@ -263,6 +263,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7918331408952446276, guid: 562c3a6eadb9c034d8eb4861294673c3, type: 3}
   m_PrefabInstance: {fileID: 84782282}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &222022965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1931987312387741911, guid: f7b22eeb1b9b34943a66eb35c48c72c6, type: 3}
+  m_PrefabInstance: {fileID: 240508657}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1375c1c23914c438ea8e4c5be5cd99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &240508657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3289,6 +3300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ECNT: 0
+  roomArea: {fileID: 464137188}
+  roomNumber: 1
   Dead: 0
 --- !u!61 &464137188
 BoxCollider2D:
@@ -3987,6 +4000,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2775607739742273243, guid: 11330dc9dec3e494abfb2c3fd6571086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 222022965}
+    - target: {fileID: 2775607739742273243, guid: 11330dc9dec3e494abfb2c3fd6571086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 2775607740352647858, guid: 11330dc9dec3e494abfb2c3fd6571086, type: 3}
       propertyPath: m_Name
       value: Death Message
@@ -4646,6 +4667,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 464137186}
     m_Modifications:
+    - target: {fileID: 3708924868817060251, guid: e7b8f7bbe811e404a89f2819c29bc735, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3708924868817060252, guid: e7b8f7bbe811e404a89f2819c29bc735, type: 3}
       propertyPath: player
       value: 
@@ -4656,11 +4681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708924868817060253, guid: e7b8f7bbe811e404a89f2819c29bc735, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.40597296
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3708924868817060253, guid: e7b8f7bbe811e404a89f2819c29bc735, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9087639
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 3708924868817060253, guid: e7b8f7bbe811e404a89f2819c29bc735, type: 3}
       propertyPath: m_LocalPosition.z
