@@ -9,13 +9,13 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
     public delegate void Death();
 
     private Death death;
-    
     public float Health = 100;
     public int currRoom;
     private DragonController controller;
-    private SpriteRenderer renderer;
+    public SpriteRenderer renderer;
     public bool isBoss;
     private bool spawned = false;
+    private Collider2D dragonZone;
 
     private BossRoomMan currBossRoom;
 
@@ -23,9 +23,11 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
     {
         controller = gameObject.GetComponent<DragonController>();
         renderer = gameObject.GetComponent<SpriteRenderer>();
-
+        dragonZone = gameObject.GetComponent<Collider2D>();
+        
         controller.enabled = false;
         renderer.enabled = false;
+        dragonZone.enabled = false;
     }
 
     public void TakeDamage(float damage, BulletTypes types)
@@ -44,6 +46,12 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
         if (room == currRoom)
         {
             gameObject.SetActive(true);
+            if (!isBoss)
+            {
+                controller.enabled = true;
+                renderer.enabled = true;
+                dragonZone.enabled = true;
+            }
         }
     }
 
@@ -60,6 +68,7 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
             currBossRoom = bossRoom;
             controller.enabled = true;
             renderer.enabled = true;
+            dragonZone.enabled = true;
         }
     }
 

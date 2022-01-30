@@ -13,6 +13,7 @@ public class BossRoomMan : MonoBehaviour,IRoomMan
     public int roomNumber;
     public IBoss levelBoss;
     public int Dead;
+    public GameObject nextBlock;
     void Start()
     {
         Enemies = gameObject.GetComponentsInChildren<IEnemyHealthManager>()
@@ -30,6 +31,8 @@ public class BossRoomMan : MonoBehaviour,IRoomMan
         }
 
         levelBoss = boss[0];
+        
+        nextBlock.SetActive(false);
     }
     bool isBoss(IEnemyHealthManager enemy){
         if (enemy.GetType().GetInterfaces().Contains(typeof(IBoss)))
@@ -61,7 +64,7 @@ public class BossRoomMan : MonoBehaviour,IRoomMan
 
     public void LevelOver()
     {
-        
+        nextBlock.SetActive(true);
     }
     
 }

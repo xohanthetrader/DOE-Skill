@@ -3303,6 +3303,7 @@ MonoBehaviour:
   roomArea: {fileID: 464137188}
   roomNumber: 1
   Dead: 0
+  nextBlock: {fileID: 1401539666}
 --- !u!61 &464137188
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3876,8 +3877,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1401539670}
   - component: {fileID: 1401539669}
-  - component: {fileID: 1401539668}
   - component: {fileID: 1401539667}
+  - component: {fileID: 1401539668}
   m_Layer: 0
   m_Name: NextLevel
   m_TagString: Untagged
@@ -3920,7 +3921,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1401539666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea399b440d6375b4da93dfb67806cd54, type: 3}
+  m_Script: {fileID: 11500000, guid: 86c525985baa78b48a734640d927b8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &1401539669
