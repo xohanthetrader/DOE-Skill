@@ -31,7 +31,7 @@ public class WispHealth : MonoBehaviour,IEnemyHealthManager
     {
         if (currentHealth <= 0)
         {
-            death.Invoke();
+            death?.Invoke();
             Destroy(gameObject);
         }
     }
