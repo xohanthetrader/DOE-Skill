@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class NextBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public LevelCompleteData count;
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
+            count.Completed += 1;
+            
             string Level = SceneManager.GetActiveScene().name;
             string lvlblock = Level.Substring(0, Level.Length - 2);
             int OtherLVLCNT = LevelGroups.GetNames(typeof(LevelGroups)).Length - 1;
