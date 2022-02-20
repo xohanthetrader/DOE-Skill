@@ -5,5 +5,5 @@ using UnityEngine;
 enum LevelGroups
 {
     Level_Test,
-    Levely,
+    Whisp,
 }

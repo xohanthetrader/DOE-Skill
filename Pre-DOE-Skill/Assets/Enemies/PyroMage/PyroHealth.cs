@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class PyroHealth : MonoBehaviour,IEnemyHealthManager
@@ -11,10 +12,23 @@ public class PyroHealth : MonoBehaviour,IEnemyHealthManager
     public int currRoom;
 
     public PlayerHealthBar myHealth;
+    
+    public delegate void Death();
+    
+    public SpriteRenderer sprite;
+    public AIPath path;
+    public FollowManager mgr;
+    public GameObject bar;
+
+    private Death death;
 
     private void Awake()
     {
         myHealth.Init(Health,Health);
+        sprite.enabled = false;
+        path.enabled = false;
+        mgr.enabled = false;
+        bar.SetActive(false);
     }
 
     public void TakeDamage(float damage, BulletTypes types)
@@ -39,6 +53,7 @@ public class PyroHealth : MonoBehaviour,IEnemyHealthManager
     {
         if (Health<= 0)
         {
+            death?.Invoke();
             Destroy(gameObject);
         }
     }
@@ -47,12 +62,16 @@ public class PyroHealth : MonoBehaviour,IEnemyHealthManager
         if (room == currRoom)
         {
             gameObject.SetActive(true);
+            sprite.enabled = true;
+            path.enabled = true;
+            mgr.enabled = true;
+            bar.SetActive(true);
         }
     }
 
     public void JoinDeath(ref IRoomMan room)
     {
-        throw new NotImplementedException();
+        death += room.DeathCounter;
     }
 
     

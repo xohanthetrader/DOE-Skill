@@ -377,7 +377,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 75
+  currRoom: 0
   myHealth: {fileID: 8016330988780705031}
+  sprite: {fileID: 4611718016778607033}
+  path: {fileID: 4611718016778607036}
+  mgr: {fileID: 4611718016778607008}
+  bar: {fileID: 8768872016178885512}
 --- !u!1 &5774434969212321654
 GameObject:
   m_ObjectHideFlags: 0

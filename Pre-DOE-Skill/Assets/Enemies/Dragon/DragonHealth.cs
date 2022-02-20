@@ -78,5 +78,9 @@ public class DragonHealth : MonoBehaviour,IEnemyHealthManager,IBoss
         {
             currBossRoom?.LevelOver();
         }
+        else
+        {
+            death?.Invoke();
+        }
     }
 }

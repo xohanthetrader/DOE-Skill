@@ -29,12 +29,13 @@ public class BossRoomMan : MonoBehaviour,IRoomMan
             var roomMan = gameObject.GetComponent<IRoomMan>();
             enemy.JoinDeath(ref roomMan);
         }
-
+        print(boss.Length);
         levelBoss = boss[0];
         
         nextBlock.SetActive(false);
     }
     bool isBoss(IEnemyHealthManager enemy){
+        print(enemy.GetType());
         if (enemy.GetType().GetInterfaces().Contains(typeof(IBoss)))
         {
             IBoss boss = (IBoss) enemy;

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e980ba5ec4b218b48a30e59fc297cfbe, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  Completed: 0
+  Completed: 1

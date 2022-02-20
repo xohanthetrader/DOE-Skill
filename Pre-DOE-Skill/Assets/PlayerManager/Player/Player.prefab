@@ -51,7 +51,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: cf1946f9dca01ee45afaf519dfb74251, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 1143805304}
   - component: {fileID: 1143805305}
   - component: {fileID: 4254413762218963490}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -431,6 +431,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b3a75076-23a2-47ed-ace2-5cc9c2361827
     m_ActionName: Keyboard/WeaponSwitch[/Keyboard/1,/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b4e8f7ed-bd5e-4759-8170-9411c42e54c0
+    m_ActionName: Keyboard/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard

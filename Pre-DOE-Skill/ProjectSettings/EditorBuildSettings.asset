@@ -20,10 +20,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Test-1.unity
     guid: 3c1bae004a2cf25429a5c5bd2c7f5add
-  - enabled: 1
-    path: Assets/Scenes/Level_Test-2.unity
-    guid: 7383b72117dc9544da72e26b8d064697
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Levely-1.unity
     guid: 8331bd0a25eefbd45b424edfb26ff71a
+  - enabled: 1
+    path: Assets/Scenes/Whisp-1.unity
+    guid: 1d13d8c19f7528c4dae81adabc55f18d
+  - enabled: 1
+    path: Assets/Scenes/Whisp-2.unity
+    guid: d004c505c34779443862f74ece714e81
+  - enabled: 1
+    path: Assets/Scenes/Whisp-3.unity
+    guid: d9cfc780d02eec64bb350db65d75b73f
+  - enabled: 1
+    path: Assets/Scenes/Level_Test-2.unity
+    guid: da6b1cfbda187184ca4200d09d7c0fad
   m_configObjects: {}
